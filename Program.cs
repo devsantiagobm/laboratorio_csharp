@@ -12,12 +12,12 @@ class Program {
     static void primerPunto() {
         Console.WriteLine("Por favor, ingrese su año de nacimiento:");
         int yearNacimiento = int.Parse(Console.ReadLine()!);
-        int edad = CalcularEdad(yearNacimiento);
+        int edad = calcularEdad(yearNacimiento);
 
         Console.WriteLine($"Su edad es: {edad} años.");
     }
 
-    static int CalcularEdad(int yearNacimiento) {
+    static int calcularEdad(int yearNacimiento) {
         return 2024 - yearNacimiento;
     }
 
@@ -36,15 +36,15 @@ class Program {
 
             switch (opcion) {
                 case 'a':
-                    Dividir();
+                    dividir();
                     break;
 
                 case 'b':
-                    ObtenerCubo();
+                    obtenerCubo();
                     break;
 
                 case 'c':
-                    CalcularIMC();
+                    calcularIMC();
                     break;
 
                 case 'd':
@@ -59,7 +59,7 @@ class Program {
         }
     }
 
-    static void Dividir() {
+    static void dividir() {
         Console.WriteLine("Opción a) Dividir seleccionada.");
         Console.Write("Ingrese el dividendo: ");
         double dividendo = Convert.ToDouble(Console.ReadLine());
@@ -75,7 +75,7 @@ class Program {
         Console.WriteLine($"El resultado de la división es: {resultadoDivision}");
     }
 
-    static void ObtenerCubo() {
+    static void obtenerCubo() {
         Console.WriteLine("Opción b) Obtener cubo seleccionada.");
         Console.Write("Ingrese un número para obtener su cubo: ");
         double numero = Convert.ToDouble(Console.ReadLine());
@@ -83,7 +83,7 @@ class Program {
         Console.WriteLine($"El cubo de {numero} es: {resultadoCubo}");
     }
 
-    static void CalcularIMC() {
+    static void calcularIMC() {
         Console.WriteLine("Opción c) Cálculo de IMC seleccionada.");
         Console.Write("Ingrese su peso en kg: ");
         double peso = Convert.ToDouble(Console.ReadLine());
@@ -100,7 +100,7 @@ class Program {
         Console.WriteLine("Ingrese el ángulo en grados:");
         double grados = double.Parse(Console.ReadLine()!);
 
-        double thetaRadians = GradosARadianes(grados);
+        double thetaRadians = gradosARadianes(grados);
 
         double x = radio * Math.Cos(thetaRadians);
         double y = radio * Math.Sin(thetaRadians);
@@ -108,7 +108,7 @@ class Program {
         Console.WriteLine($"Las coordenadas rectangulares son: ({x}, {y})");
     }
 
-    static double GradosARadianes(double grados) {
+    static double gradosARadianes(double grados) {
         return grados * Math.PI / 180.0;
     }
 
@@ -119,16 +119,16 @@ class Program {
         Console.WriteLine("Ingrese el valor de n:");
         int n = Convert.ToInt32(Console.ReadLine());
 
-        double resultado = CalcularProgresion(x, n);
+        double resultado = calcularProgresion(x, n);
         Console.WriteLine($"El resultado de la progresión es: {resultado}");
     }
 
-    static double CalcularProgresion(double x, int n) {
+    static double calcularProgresion(double x, int n) {
         if (n == 0) {
             return 1;
         }
         else {
-            return Math.Pow(x, n) + CalcularProgresion(x, n - 1);
+            return Math.Pow(x, n) + calcularProgresion(x, n - 1);
         }
     }
     static void quintoEjercicio() {
@@ -137,16 +137,16 @@ class Program {
 
         Console.WriteLine("La serie Fibonacci hasta el término " + limite + " es:");
         for (int i = 0; i <= limite; i++) {
-            Console.Write(Fibonacci(i) + " ");
+            Console.Write(fibonacci(i) + " ");
         }
     }
 
-    static int Fibonacci(int n) {
+    static int fibonacci(int n) {
         if (n <= 1) {
             return n;
         }
         else {
-            return Fibonacci(n - 1) + Fibonacci(n - 2);
+            return fibonacci(n - 1) + fibonacci(n - 2);
         }
     }
 
@@ -154,11 +154,11 @@ class Program {
         Console.WriteLine("Ingrese el valor de n:");
         int n = Convert.ToInt32(Console.ReadLine());
 
-        double resultado = CalcularSerie(n);
+        double resultado = calcularSerie(n);
         Console.WriteLine($"El resultado de la serie hasta el término {n} es: {resultado}");
     }
 
-    static double CalcularSerie(int n) {
+    static double calcularSerie(int n) {
         double suma = 0;
 
         for (int i = 1; i <= n; i++) {
